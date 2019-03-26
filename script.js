@@ -465,11 +465,12 @@ if (john.clacBMI > mark.clacBMI){
 
 /************
  * Loops and iteration
- */
+ 
 
 for (var i = 1; i <= 20; i += 2) {
     console.log(i);
 }
+*/
 
 // i = 0, 0 < 10 true, log i to console, i++
 // i = 1, 1, 10 true, log i to the console i++
@@ -520,7 +521,7 @@ var john = {
 
             if (bill < 50) {
                 percentage = .2;
-            } else (bill >= 50 && bill < 200)  {
+            } else if (bill >= 50 && bill < 200)  {
                 percentage = .15;
             } else {
                 percentage = .1;
@@ -531,3 +532,44 @@ var john = {
         }
     }
 }
+
+john.clacTips();
+console.log(john);
+
+var mark = {
+    fullName: 'Mark Miller',
+    bills: [77, 478, 110, 45],
+    calcTips: function(){
+        this.tips = [];
+        this.finalValues = [];
+
+        for (var i = 0; i < this.bills.length; i++)
+        {
+            var percentage;
+            var bill = this.bills[i];
+
+            if (bill < 100) {
+                percentage = .2;
+            } else if (bill >= 100 && bill < 300){
+                percentage = .1;
+            } else {
+                percentage = .25
+            }
+
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;
+        }
+    }
+}
+
+function clacAverage(tips){
+    var sum = 0;
+    for(var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
+    }
+}
+// [2, 6, 4] -> 0/2/8/12
+
+john.calcTips();
+mark.calcTips();
+console.log(john. mark);
